@@ -1,11 +1,11 @@
 # thunder
 
-speed control of a dc motor using a DualShock 4 gamepad
+Speed control of a DC Motor using a DualShock 4 gamepad
 
 ## Arduino Side
 
-for comm we use Arduhdlc library (already included)
-https://github.com/jarkko-hautakorpi/Arduhdlc
+for communication between devices we use HDLC: [Arduhdlc library](https://github.com/jarkko-hautakorpi/Arduhdlc) (already included)
+
 
 ## Raspberry Side
 
