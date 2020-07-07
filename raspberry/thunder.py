@@ -1,5 +1,5 @@
 from serial import Serial
-import bluetooth
+# import bluetooth
 from evdev import ecodes, ff, InputDevice
 import asyncio
 from crccheck.crc import Crcc16Mcrf4xx
@@ -13,7 +13,6 @@ def buildFrame(commandAndData):
 
 async def ds_listener(dev):	
 	async for event in dev.async_read_loop():
-		#if event.type != ecodes.EV_SYN and event.type != ecodes.MSC_SCAN:
 		if event.type != ecodes.EV_SYN:
 			notify_event(event.type,event.code,event.value)
 
@@ -60,8 +59,3 @@ if __name__ == "__main__":
 
 	loop = asyncio.get_event_loop()
 	loop.run_until_complete(asyncio.gather(*tasks))
-
-	# for recive data from bluetooth
-	#while 1:
-	#	data = bluetooth_client.recv(1024)
-	#	print(data)
